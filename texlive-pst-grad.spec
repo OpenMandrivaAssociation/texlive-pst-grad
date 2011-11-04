@@ -50,6 +50,7 @@ package pst-slpe.
 %doc %{_texmfdistdir}/doc/generic/pst-grad/pst-grad-doc.bib
 %doc %{_texmfdistdir}/doc/generic/pst-grad/pst-grad-doc.pdf
 %doc %{_texmfdistdir}/doc/generic/pst-grad/pst-grad-doc.tex
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -60,3 +61,5 @@ package pst-slpe.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar dvips tex doc %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
