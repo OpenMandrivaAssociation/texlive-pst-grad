@@ -6,7 +6,7 @@
 # catalog-version 1.06
 Name:		texlive-pst-grad
 Version:	1.06
-Release:	5
+Release:	6
 Summary:	Filling with colour gradients, using PStricks
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/graphics/pstricks/contrib/pst-grad
