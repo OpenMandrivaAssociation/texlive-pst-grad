@@ -3,7 +3,7 @@ Version:	15878
 Release:	2
 Summary:	Filling with colour gradients, using PStricks
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/graphics/pstricks/contrib/pst-grad
+URL:		https://www.ctan.org/tex-archive/graphics/pstricks/contrib/pst-grad
 License:	LPPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pst-grad.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pst-grad.doc.r%{version}.tar.xz
