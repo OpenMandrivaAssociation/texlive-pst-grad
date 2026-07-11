@@ -1,47 +1,22 @@
-Name:		texlive-pst-grad
-Version:	15878
-Release:	2
-Summary:	Filling with colour gradients, using PStricks
+%global tl_name pst-grad
+%global tl_revision 77682
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	1.06
+Release:	%{tl_revision}.1
+Summary:	Filling with colour gradients, using PSTricks
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/graphics/pstricks/contrib/pst-grad
-License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pst-grad.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pst-grad.doc.r%{version}.tar.xz
+License:	lppl
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/pst-grad.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/pst-grad.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-Pst-grad is a PSTricks based package for filling with colour
-gradients. Supported are colours in the RGB, CMYK or HSB
-models. Other colour gradient mechanisms are to be found in
-package pst-slpe.
+The package fills with colour gradients, using PSTricks. The RGB, CMYK
+and HSB models are supported. Other colour gradient mechanisms are to be
+found in package pst-slpe.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/dvips/pst-grad/pst-grad.pro
-%{_texmfdistdir}/tex/generic/pst-grad/pst-grad.tex
-%{_texmfdistdir}/tex/latex/pst-grad/pst-grad.sty
-%doc %{_texmfdistdir}/doc/generic/pst-grad/Changes
-%doc %{_texmfdistdir}/doc/generic/pst-grad/pst-grad-doc.bib
-%doc %{_texmfdistdir}/doc/generic/pst-grad/pst-grad-doc.pdf
-%doc %{_texmfdistdir}/doc/generic/pst-grad/pst-grad-doc.tex
-
-#-----------------------------------------------------------------------
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar dvips tex doc %{buildroot}%{_texmfdistdir}
